@@ -103,6 +103,8 @@ Let's use that to slowdown the processor.
 #[inline(never)]
 #[no_mangle]
 pub fn main() -> ! {
+    use pg::time::{FREQUENCY, Instant};
+
     let usart1 = unsafe { peripheral::usart1_mut() };
 
     let instant = Instant::now();
